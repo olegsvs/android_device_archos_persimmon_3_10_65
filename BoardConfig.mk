@@ -47,7 +47,7 @@ BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,32N2
 BOARD_KERNEL_BASE := 0x40000000
 BOARD_KERNEL_PAGESIZE := 2048
 
-BOARD_CUSTOM_BOOTIMG_MK := device/smart/sprint4g/mkbootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/archos/cobalt/mkbootimg.mk
 BOARD_MKBOOTIMG_ARGS := --cmdline bootopt=64S3,32N2,32N2 --pagesize 2048 --base 0x40000000 --kernel_offset 0x00008000 --ramdisk_offset 0x04000000 --tags_offset 0x0e000000
 
 # experimental
