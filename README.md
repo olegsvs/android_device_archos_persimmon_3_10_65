@@ -1,8 +1,8 @@
 # android_device_cobalt
-Device repository for ARK Benefit M7 CM12.1 6735
+Device repository for Archos 50 Cobalt CM12.1 6735
 
 Currently broken features:
-you tell me
+not tested
 
 ## Thanks to:
  * SRT TEAM
