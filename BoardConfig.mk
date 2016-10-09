@@ -1,8 +1,8 @@
 
-LOCAL_PATH := device/archos/50_cobalt
+LOCAL_PATH := device/archos/persimmon
 
 # inherit from the proprietary version
--include vendor/archos/50_cobalt/BoardConfigVendor.mk
+-include vendor/archos/persimmon/BoardConfigVendor.mk
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
 # Link against libxlog
@@ -41,7 +41,7 @@ BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,32N2
 BOARD_KERNEL_BASE := 0x40000000
 BOARD_KERNEL_PAGESIZE := 2048
 
-BOARD_CUSTOM_BOOTIMG_MK := device/archos/50_cobalt/mkbootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/archos/persimmon/mkbootimg.mk
 BOARD_MKBOOTIMG_ARGS := --cmdline bootopt=64S3,32N2,32N2 --pagesize 2048 --base 0x40000000 --kernel_offset 0x00008000 --ramdisk_offset 0x04000000 --tags_offset 0x0e000000
 
 # experimental
@@ -57,13 +57,13 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 1610612736
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 #for now lets use prebuilt
-TARGET_PREBUILT_KERNEL := device/archos/50_cobalt/prebuilt/kernel
+TARGET_PREBUILT_KERNEL := device/archos/persimmon/prebuilt/kernel
 
 #system.prop
-TARGET_SYSTEM_PROP := device/archos/50_cobalt/system.prop
+TARGET_SYSTEM_PROP := device/archos/persimmon/system.prop
 
 # CMHW
-BOARD_HARDWARE_CLASS := device/archos/50_cobalt/cmhw/
+BOARD_HARDWARE_CLASS := device/archos/persimmon/cmhw/
 
 # WiFi
 WPA_SUPPLICANT_VERSION := VER_0_8_X
@@ -84,7 +84,7 @@ BOARD_USES_LEGACY_MTK_AV_BLOB := true
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_MTK := true
 BOARD_BLUETOOTH_DOES_NOT_USE_RFKILL := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/archos/50_cobalt/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/archos/persimmon/bluetooth
 
 # ANT
 MTK_ANT_SUPPORT := yes
@@ -107,7 +107,7 @@ MTK_FM_SUPPORT := yes
 MTK_FM_RX_SUPPORT := yes
 
 #recovery
-TARGET_RECOVERY_FSTAB := device/archos/50_cobalt/recovery/root/etc/twrp.fstab
+TARGET_RECOVERY_FSTAB := device/archos/persimmon/recovery/root/etc/twrp.fstab
 BOARD_SUPPRESS_SECURE_ERASE := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
@@ -129,14 +129,14 @@ COMMON_GLOBAL_CPPFLAGS += -DMTK_HARDWARE
 
 #EGL settings
 USE_OPENGL_RENDERER := true
-BOARD_EGL_CFG := device/archos/50_cobalt/configs/egl.cfg
+BOARD_EGL_CFG := device/archos/persimmon/configs/egl.cfg
 BOARD_EGL_WORKAROUND_BUG_10194508 := trues
 
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun/file
 
 # SELinux
 BOARD_SEPOLICY_DIRS := \
-       device/archos/50_cobalt/sepolicy
+       device/archos/persimmon/sepolicy
 
 BOARD_SEPOLICY_UNION := \
     app.te \

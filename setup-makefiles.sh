@@ -1,7 +1,7 @@
 #!/bin/sh
 
 VENDOR=archos
-DEVICE=cobalt
+DEVICE=persimmon
 OUTDIR=vendor/$VENDOR/$DEVICE
 MAKEFILE=../../../$OUTDIR/$DEVICE-vendor-blobs.mk
 

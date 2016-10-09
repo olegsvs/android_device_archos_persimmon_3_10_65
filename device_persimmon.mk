@@ -3,18 +3,18 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
-$(call inherit-product, vendor/archos/50_cobalt/50_cobalt-vendor-blobs.mk)
+$(call inherit-product, vendor/archos/persimmon/persimmon-vendor-blobs.mk)
 
 PRODUCT_LOCALES := ru_RU en_US uk_UA
 PRODUCT_AAPT_CONFIG := normal hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
-DEVICE_PACKAGE_OVERLAYS += device/archos/50_cobalt/overlay
-TARGET_OTA_ASSERT_DEVICE := ac50co,50_cobalt,archos
+DEVICE_PACKAGE_OVERLAYS += device/archos/persimmon/overlay
+TARGET_OTA_ASSERT_DEVICE := ac50co,persimmon,archos
 
 CM_BUILDTYPE :=NIGHTLY
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := device/archos/50_cobalt/prebuilt/kernel
+	LOCAL_KERNEL := device/archos/persimmon/prebuilt/kernel
 else
 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
@@ -29,24 +29,24 @@ PRODUCT_PACKAGES += \
 
 # init.rc's
 PRODUCT_COPY_FILES += \
-	device/archos/50_cobalt/rootdir/init.mt6735.rc:root/init.mt6735.rc \
-	device/archos/50_cobalt/rootdir/init.xlog.rc:root/init.xlog.rc \
-	device/archos/50_cobalt/rootdir/init.mt6735.usb.rc:root/init.mt6735.usb.rc \
-	device/archos/50_cobalt/rootdir/init.recovery.mt6735.rc:root/init.recovery.mt6735.rc \
-	device/archos/50_cobalt/rootdir/init.project.rc:root/init.project.rc \
-	device/archos/50_cobalt/rootdir/factory_init.rc:root/factory_init.rc \
-	device/archos/50_cobalt/rootdir/factory_init.project.rc:root/factory_init.project.rc \
-	device/archos/50_cobalt/rootdir/init.ssd.rc:root/init.ssd.rc \
-	device/archos/50_cobalt/rootdir/init.trace.rc:root/init.trace.rc \
-	device/archos/50_cobalt/rootdir/init.modem.rc:root/init.modem.rc \
-        device/archos/50_cobalt/rootdir/fstab.mt6735:root/fstab.mt6735  \
-	device/archos/50_cobalt/rootdir/ueventd.mt6735.rc:root/ueventd.mt6735.rc \
-	device/archos/50_cobalt/rootdir/meta_init.rc:root/meta_init.rc \
-	device/archos/50_cobalt/rootdir/meta_init.project.rc:root/meta_init.project.rc \
-	device/archos/50_cobalt/rootdir/meta_init.modem.rc:root/meta_init.modem.rc \
-	device/archos/50_cobalt/rootdir/meta_init.modem.rc:root/factory_init.rc \
-	device/archos/50_cobalt/rootdir/meta_init.modem.rc:root/factory_init.project.rc \
-	device/archos/50_cobalt/rootdir/init.rc:root/init.rc
+	device/archos/persimmon/rootdir/init.mt6735.rc:root/init.mt6735.rc \
+	device/archos/persimmon/rootdir/init.xlog.rc:root/init.xlog.rc \
+	device/archos/persimmon/rootdir/init.mt6735.usb.rc:root/init.mt6735.usb.rc \
+	device/archos/persimmon/rootdir/init.recovery.mt6735.rc:root/init.recovery.mt6735.rc \
+	device/archos/persimmon/rootdir/init.project.rc:root/init.project.rc \
+	device/archos/persimmon/rootdir/factory_init.rc:root/factory_init.rc \
+	device/archos/persimmon/rootdir/factory_init.project.rc:root/factory_init.project.rc \
+	device/archos/persimmon/rootdir/init.ssd.rc:root/init.ssd.rc \
+	device/archos/persimmon/rootdir/init.trace.rc:root/init.trace.rc \
+	device/archos/persimmon/rootdir/init.modem.rc:root/init.modem.rc \
+        device/archos/persimmon/rootdir/fstab.mt6735:root/fstab.mt6735  \
+	device/archos/persimmon/rootdir/ueventd.mt6735.rc:root/ueventd.mt6735.rc \
+	device/archos/persimmon/rootdir/meta_init.rc:root/meta_init.rc \
+	device/archos/persimmon/rootdir/meta_init.project.rc:root/meta_init.project.rc \
+	device/archos/persimmon/rootdir/meta_init.modem.rc:root/meta_init.modem.rc \
+	device/archos/persimmon/rootdir/meta_init.modem.rc:root/factory_init.rc \
+	device/archos/persimmon/rootdir/meta_init.modem.rc:root/factory_init.project.rc \
+	device/archos/persimmon/rootdir/init.rc:root/init.rc
 	
 # hardware specifics
 PRODUCT_COPY_FILES += \
@@ -139,7 +139,7 @@ PRODUCT_COPY_FILES += \
 
 # GPS
 PRODUCT_COPY_FILES += \
-    device/archos/50_cobalt/configs/agps_profiles_conf2.xml:system/etc/agps_profiles_conf2.xml
+    device/archos/persimmon/configs/agps_profiles_conf2.xml:system/etc/agps_profiles_conf2.xml
     
 # FM Radio
 PRODUCT_PACKAGES += \
@@ -162,8 +162,8 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml
 
 PRODUCT_COPY_FILES += \
-    device/archos/50_cobalt/rootdir/etc/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
-    device/archos/50_cobalt/configs/android.hardware.consumerir.xml:system/etc/permissions/android.hardware.consumerir.xml \
+    device/archos/persimmon/rootdir/etc/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
+    device/archos/persimmon/configs/android.hardware.consumerir.xml:system/etc/permissions/android.hardware.consumerir.xml \
 	
 # Thermal
 PRODUCT_COPY_FILES += \
