@@ -9,7 +9,8 @@ PRODUCT_LOCALES := ru_RU en_US uk_UA
 PRODUCT_AAPT_CONFIG := normal hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 DEVICE_PACKAGE_OVERLAYS += device/archos/50_cobalt/overlay
-TARGET_OTA_ASSERT_DEVICE := ac50co,50_cobalt,Archos 50 Cobalt,archos
+TARGET_OTA_ASSERT_DEVICE := ac50co,50_cobalt,archos
+
 CM_BUILDTYPE :=NIGHTLY
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
@@ -38,7 +39,7 @@ PRODUCT_COPY_FILES += \
 	device/archos/50_cobalt/rootdir/init.ssd.rc:root/init.ssd.rc \
 	device/archos/50_cobalt/rootdir/init.trace.rc:root/init.trace.rc \
 	device/archos/50_cobalt/rootdir/init.modem.rc:root/init.modem.rc \
-    device/archos/50_cobalt/rootdir/fstab.mt6735:root/fstab.mt6735  \
+        device/archos/50_cobalt/rootdir/fstab.mt6735:root/fstab.mt6735  \
 	device/archos/50_cobalt/rootdir/ueventd.mt6735.rc:root/ueventd.mt6735.rc \
 	device/archos/50_cobalt/rootdir/meta_init.rc:root/meta_init.rc \
 	device/archos/50_cobalt/rootdir/meta_init.project.rc:root/meta_init.project.rc \
