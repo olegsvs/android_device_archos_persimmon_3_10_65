@@ -1,26 +1,20 @@
-# include proprietary libraries and binaries
--include vendor/archos/cobalt/BoardConfigVendor.mk
 
-# use these headers 
-TARGET_SPECIFIC_HEADER_PATH := device/archos/cobalt/include
- 
+LOCAL_PATH := device/archos/50_cobalt
+
+# inherit from the proprietary version
+-include vendor/archos/50_cobalt/BoardConfigVendor.mk
+TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
+
 # Link against libxlog
 TARGET_LDPRELOAD += libxlog.so
  
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := mt6735m
 TARGET_NO_BOOTLOADER := true
- 
-# Architecture
-TARGET_BOARD_PLATFORM := mt6735m
-TARGET_ARCH := arm64
-TARGET_NO_BOOTLOADER := true
-TARGET_CPU_ABI := arm64-v8a
-TARGET_CPU_ABI2 :=
-TARGET_ARCH_VARIANT := armv8-a
-TARGET_CPU_VARIANT := generic
-TARGET_BOARD_SUFFIX := _64
- 
+
+#Use prebuilt chromium
+PRODUCT_PREBUILT_WEBVIEWCHROMIUM := yes
+
 #32 bit
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
@@ -47,8 +41,11 @@ BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,32N2
 BOARD_KERNEL_BASE := 0x40000000
 BOARD_KERNEL_PAGESIZE := 2048
 
-BOARD_CUSTOM_BOOTIMG_MK := device/archos/cobalt/mkbootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/archos/50_cobalt/mkbootimg.mk
 BOARD_MKBOOTIMG_ARGS := --cmdline bootopt=64S3,32N2,32N2 --pagesize 2048 --base 0x40000000 --kernel_offset 0x00008000 --ramdisk_offset 0x04000000 --tags_offset 0x0e000000
+
+# experimental
+TARGET_REQUIRES_SYNCHRONOUS_SETSURFACE := true
 
 #extracted from /proc/partinfo
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -59,21 +56,14 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1610612736
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 1610612736
 BOARD_FLASH_BLOCK_SIZE := 131072
 
-# experimental
-TARGET_REQUIRES_SYNCHRONOUS_SETSURFACE := true
+#for now lets use prebuilt
+TARGET_PREBUILT_KERNEL := device/archos/50_cobalt/prebuilt/kernel
 
-# Stock_kernel
-TARGET_PREBUILT_KERNEL := device/archos/cobalt/kernel
+#system.prop
+TARGET_SYSTEM_PROP := device/archos/50_cobalt/system.prop
 
-# Build an EXT4 ROM image
-TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_NO_FACTORYIMAGE := true
-
-# system.prop
-TARGET_SYSTEM_PROP := device/archos/cobalt/system.prop
-
-# CyanogenMod Hardware Hooks
-BOARD_HARDWARE_CLASS := device/archos/cobalt/cmhw/
+# CMHW
+BOARD_HARDWARE_CLASS := device/archos/50_cobalt/cmhw/
 
 # WiFi
 WPA_SUPPLICANT_VERSION := VER_0_8_X
@@ -94,7 +84,11 @@ BOARD_USES_LEGACY_MTK_AV_BLOB := true
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_MTK := true
 BOARD_BLUETOOTH_DOES_NOT_USE_RFKILL := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/archos/cobalt/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/archos/50_cobalt/bluetooth
+
+# ANT
+MTK_ANT_SUPPORT := yes
+BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 
 # GPS
 BOARD_GPS_LIBRARIES :=true
@@ -112,24 +106,37 @@ BOARD_USES_MTK_AUDIO := true
 MTK_FM_SUPPORT := yes
 MTK_FM_RX_SUPPORT := yes
 
-# Mediatek flags
+#recovery
+TARGET_RECOVERY_FSTAB := device/archos/50_cobalt/recovery/root/etc/twrp.fstab
+BOARD_SUPPRESS_SECURE_ERASE := true
+BOARD_HAS_NO_SELECT_BUTTON := true
+TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
+TW_MAX_BRIGHTNESS := 255
+TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone1/temp
+#RECOVERY_GRAPHICS_USE_LINELENGTH := true
+TW_THEME := portrait_mdpi
+#if sdcard0 is a /data/media emulated one
+#RECOVERY_SDCARD_ON_DATA := true
+TW_EXCLUDE_DEFAULT_USB_INIT := true
+TW_INCLUDE_CRYPTO := true
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
+
+#Mediatek flags
 BOARD_HAS_MTK_HARDWARE := true
 MTK_HARDWARE := true
 COMMON_GLOBAL_CFLAGS += -DMTK_HARDWARE -DADD_LEGACY_ACQUIRE_BUFFER_SYMBOL
 COMMON_GLOBAL_CPPFLAGS += -DMTK_HARDWARE
 
-# Fingerprint Sensor
-VANZO_FEATURE_ADD_SILEADINC_FP := yes
-VANZO_FEATURE_FACTORYMODE_USE_ENGLISH := yes
-
-# EGL settings
+#EGL settings
 USE_OPENGL_RENDERER := true
-BOARD_EGL_CFG := device/archos/cobalt/egl.cfg
-BOARD_EGL_WORKAROUND_BUG_10194508 := true
+BOARD_EGL_CFG := device/archos/50_cobalt/configs/egl.cfg
+BOARD_EGL_WORKAROUND_BUG_10194508 := trues
+
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun/file
 
 # SELinux
 BOARD_SEPOLICY_DIRS := \
-       device/archos/cobalt/sepolicy
+       device/archos/50_cobalt/sepolicy
 
 BOARD_SEPOLICY_UNION := \
     app.te \
@@ -309,53 +316,7 @@ BOARD_SEPOLICY_UNION += \
 	zpppd_gprs.te \
 	md_ctrl.te \
 	cmddumper.te \
-	tunman.te 
-
-PRODUCT_PREBUILT_WEBVIEWCHROMIUM := yes
-
-# Block based ota
-# see http://review.cyanogenmod.org/#/c/78849/1/core/Makefile
-BLOCK_BASED_OTA := false
-
-# recovery
-#TARGET_RECOVERY_INITRC := device/archos/cobalt/recovery/init.mt6753.rc
-TARGET_RECOVERY_FSTAB := device/archos/cobalt/recovery/root/fstab.mt6753
-TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/devices/platform/leds-mt65xx/leds/lcd-backlight/brightness\"
-
-# use power button for selections in recovery
-BOARD_HAS_NO_SELECT_BUTTON := true
-
-# ________________________________________________TWRP_________________________________________________
-# RECOVERY_VARIANT := twrp
-
-TW_THEME := portrait_hdpi
-# brightness settings (needs verification)
-TW_BRIGHTNESS_PATH := /sys/devices/platform/leds-mt65xx/leds/lcd-backlight/brightness/
-TW_MAX_BRIGHTNESS := 255
-# may be useful if we get graphical glitches
-RECOVERY_GRAPHICS_USE_LINELENGTH := true
-# in case of wrong color this needs modification
-TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-# if sdcard0 is a /data/media emulated one
-RECOVERY_SDCARD_ON_DATA := true
-# ntfs support? (needs much space..)
-TW_INCLUDE_NTFS_3G := true
-# we may need that if sdcard0 dont work
-TW_FLASH_FROM_STORAGE := true
-TW_EXTERNAL_STORAGE_PATH := "/external_sd"
-TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
-TW_DEFAULT_EXTERNAL_STORAGE := true
-# name backup folders 'cobalt' and not after MTK's fake hardware ID '1234567...'
-TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
-# we have it and it's enforcing!
-TWHAVE_SELINUX := true
-#only add if kernel supports
-#TW_INCLUDE_FUSE_EXFAT := true
-#F2FS support (only activate if kernel supports)
-#TARGET_USERIMAGES_USE_F2FS:=true
-# encryption
-TW_INCLUDE_CRYPTO := true
-# Antiforensic wipe
-BOARD_SUPPRESS_SECURE_ERASE :=  true
-# CPU temp
-TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone1/temp
+	tunman.te
+	
+# Prebuilt kernel stuff
+$(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr)

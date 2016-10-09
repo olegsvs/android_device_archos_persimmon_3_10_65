@@ -1,21 +1,12 @@
-# android_device_cobalt
+SRT
 Device repository for Archos 50 Cobalt CM12.1 6735
 
-Currently broken features:
-not tested
+TESTING
 
 ## Thanks to:
- * SRT TEAM
- * DerTeufel1980
+ * darklord4822
+ * SRT Team
  * fire855
- * jianminglok
- * walter79
+ * Deepflex
  * visi0nary
- * vova.vafin
- * ariafan
- * DeepFlex
- * Zormax
- * Cheshkin
- * Hyperion70
- * vo-1
- * more more guys
+ * vitek999

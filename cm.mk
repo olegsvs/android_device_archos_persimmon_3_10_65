@@ -1,25 +1,24 @@
 # Release name
-PRODUCT_RELEASE_NAME := cobalt
+PRODUCT_RELEASE_NAME := 50_cobalt
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/archos/cobalt/device_cobalt.mk)
+$(call inherit-product, device/archos/50_cobalt/device_50_cobalt.mk)
 
 # Configure dalvik heap
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
-
-TARGET_SCREEN_HEIGHT := 1280	
+TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := cobalt
-PRODUCT_NAME := cm_cobalt
-PRODUCT_BRAND := aarchosrk
-PRODUCT_MODEL := cobalt
-PRODUCT_MANUFACTURER := archos
+PRODUCT_DEVICE := 50_cobalt
+PRODUCT_NAME := cm_50_cobalt
+PRODUCT_BRAND := Archos
+PRODUCT_MODEL := 50 Cobalt
+PRODUCT_MANUFACTURER := Archos
 
 PRODUCT_DEFAULT_LANGUAGE := ru
 PRODUCT_DEFAULT_REGION   := RU

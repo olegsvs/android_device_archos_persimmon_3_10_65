@@ -1,23 +1,14 @@
+#
+# system.prop for Oukitel k4000(Orange)
+#
+
 rild.libpath=/system/lib/mtk-ril.so
 rild.libargs=-d /dev/ttyC0
 
-# MTK, Infinity, 20090720 {
 wifi.interface=wlan0
-# MTK, Infinity, 20090720 }
-
-# MTK, mtk03034, 20101210 {
 ro.mediatek.wlan.wsc=1
-# MTK, mtk03034 20101210}
-# MTK, mtk03034, 20110318 {
 ro.mediatek.wlan.p2p=1
-# MTK, mtk03034 20110318}
-
-# MTK, mtk03034, 20101213 {
 mediatek.wlan.ctia=0
-# MTK, mtk03034 20101213}
-
-# FMRadio without headsets thanks to igor-s74
-ro.mtk_fm_short_antenna_support=1
 
 #
 wifi.tethering.interface=ap0
@@ -25,11 +16,9 @@ wifi.tethering.interface=ap0
 
 ro.opengles.version=196608
 
-persist.mtk.aee.aed=on
-
 wifi.direct.interface=p2p0
-dalvik.vm.heapgrowthlimit=256m
-dalvik.vm.heapsize=512m
+dalvik.vm.heapgrowthlimit=128m
+dalvik.vm.heapsize=256m
 
 # USB MTP WHQL
 ro.sys.usb.mtp.whql.enable=0
@@ -37,7 +26,7 @@ ro.sys.usb.mtp.whql.enable=0
 # Power off opt in IPO
 sys.ipo.pwrdncap=2
 
-ro.sys.usb.storage.type=mtp
+ro.sys.usb.storage.type=mtp,mass_storage
 
 # USB BICR function
 ro.sys.usb.bicr=no
@@ -55,6 +44,9 @@ persist.audio.dirac.speaker=true
 
 ro.zygote.preload.enable=0
 
+# temporary enables NAV bar (soft keys)
+qemu.hw.mainkeys=1
+
 ro.kernel.zio=38,108,105,16
 
 # Disable dirty region for Mali
@@ -64,13 +56,9 @@ debug.hwui.render_dirty_regions=false
 persist.sys.button_jack_profile=volume
 persist.sys.button_jack_switch=0
 
-# add by qin for runin
-ro.build.device.ninur=64687
-
 persist.tone_relative_volume=100
 ro.mediatek.chip_ver=S01
-ro.mediatek.version.release=ALPS.L1.MP3.V2_NB6753.65U.L1_P22
-ro.mediatek.platform=MT6735
+ro.mediatek.platform=mt6735m
 ro.telephony.sim.count=2
 persist.radio.default.sim=0
 persist.radio.multisim.config=dsds
@@ -160,19 +148,9 @@ ro.mtk_motion_track_support=1
 ro.mtk_slidevideo_support=1
 ro.mtk_bg_power_saving_support=1
 ro.mtk_bg_power_saving_ui=1
-ro.have_aee_feature=1
 ro.sim_me_lock_mode=0
-ro.mtk_voice_extension_support=1
 wfd.dummy.enable=1
 persist.power.useautobrightadj=true
-keyguard.no_require_sim=true
-persist.sys.isUsbOtgEnabled=true
-persist.debug.wfd.enable=1
-ro.kernel.android.checkjni=0
-ro.telephony.ril_class=MediaTekRIL
-ro.telephony.ril.config=fakeiccid
-persist.call_recording.enabled=true
-persist.call_recording.src=1
 
 ro.kernel.android.checkjni=0
 ro.telephony.ril_class=MediaTekRIL
@@ -180,6 +158,8 @@ ro.telephony.ril.config=fakeiccid
 persist.call_recording.enabled=true
 persist.call_recording.src=1
 
-# OTA
-cm.updater.type=plain
-cm.updater.uri=https://raw.githubusercontent.com/olegsvs/API_CMUpdater/cm-12.1/API
+# fix for LTE/mobile data on both SIMs
+persist.radio.mobile.data=0,0
+
+# FMRadio without headsets thanks to igor-s74
+ro.mtk_fm_short_antenna_support=1

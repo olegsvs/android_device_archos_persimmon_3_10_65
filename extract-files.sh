@@ -6,7 +6,7 @@
 ## $2 specifies the zip file to extract from (default = ../../../${DEVICE}_update.zip)
 
 VENDOR=archos
-DEVICE=cobalt
+DEVICE=50_cobalt
 
 BASE=../../../vendor/$VENDOR/$DEVICE/proprietary
 rm -rf $BASE/*
@@ -26,9 +26,9 @@ else
             mkdir -p $BASE/$DIR
 	fi
 	if [ "$1" = "unzip" ]; then
-            unzip -j -o $ZIPFILE $FILE -d $BASE/$DIR
+            unzip -j -o $ZIPFILE system/$FILE -d $BASE/$DIR
 	else
-            adb pull $FILE $BASE/$FILE
+            adb pull /system/$FILE $BASE/$FILE
 	fi
     done
 fi

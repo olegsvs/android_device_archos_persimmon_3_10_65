@@ -48,9 +48,11 @@
             android:emulated="false"
             android:removable="true"
             android:allowMassStorage="true" />
-<storage
-    android:mountPoint="/storage/usbotg"
-    android:storageDescription="@string/storage_usb"
-    android:removable="true"
-    android:maxFileSize="4096" />
+        <storage android:mountPoint="/storage/usbotg"
+            android:storageDescription="@string/storage_usb"
+            android:primary="false"
+            android:emulated="false"
+            android:removable="true"
+            android:allowMassStorage="false" />
 </StorageList>
+
