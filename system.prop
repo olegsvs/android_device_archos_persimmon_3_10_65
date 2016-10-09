@@ -45,7 +45,7 @@ persist.audio.dirac.speaker=true
 ro.zygote.preload.enable=0
 
 # temporary enables NAV bar (soft keys)
-qemu.hw.mainkeys=1
+qemu.hw.mainkeys=0
 
 ro.kernel.zio=38,108,105,16
 
