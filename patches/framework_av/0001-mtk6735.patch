@@ -1,9 +1,8 @@
-From 98e9c1a025e5fd853ba9214dc5f610f93ff4b8d9 Mon Sep 17 00:00:00 2001
+From 829769f3631415191dcc426c426f12f119cf0150 Mon Sep 17 00:00:00 2001
 From: olegsvs <oleg.texet@gmail.com>
-Date: Sun, 12 Jun 2016 13:17:40 -0400
-Subject: [PATCH] Patch for 6735 mtk
+Date: Tue, 22 Nov 2016 13:50:53 +0000
+Subject: [PATCH] mtk6735
 
-Change-Id: I04fca74c8bd65b7223fae3e10cd17f052900ae47
 ---
  include/media/AudioSystem.h                        |   3 +
  include/media/IAudioFlinger.h                      |   3 +
@@ -425,7 +424,7 @@ index 0000000..f67277c
 +
 +} // namespace
 diff --git a/media/libmediaplayerservice/Android.mk b/media/libmediaplayerservice/Android.mk
-index 8f06c55..6003b01 100644
+index 8f06c55..a5fe690 100644
 --- a/media/libmediaplayerservice/Android.mk
 +++ b/media/libmediaplayerservice/Android.mk
 @@ -43,6 +43,7 @@ LOCAL_SHARED_LIBRARIES :=       \

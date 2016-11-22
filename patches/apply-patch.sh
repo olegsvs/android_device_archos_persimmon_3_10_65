@@ -1,18 +1,18 @@
 #!/bin/bash
 cd ../../../..
 cd frameworks/av
-git apply -v ../../device/archos/persimmon/patches/framework_av/0001-Patch-for-6735-mtk.patch
-git apply -v ../../device/archos/persimmon/patches/framework_av/0002-camera.patch
-git apply -v ../../device/archos/persimmon/patches/framework_av/frameworks_av_videorecording_fix.patch
+git apply -v ../../device/archos/persimmon/patches/framework_av/0001-mtk6735.patch
+#git apply -v ../../device/archos/persimmon/patches/framework_av/0002-camera.patch
+#git apply -v ../../device/archos/persimmon/patches/framework_av/frameworks_av_videorecording_fix.patch
 cd ../..
 cd frameworks/base
-git apply -v ../../device/archos/persimmon/patches/framework_base/0001-Patch-for-6735-mtk.patch
+git apply -v ../../device/archos/persimmon/patches/framework_base/0001-mtk6735.patch
 cd ../..
 cd packages/apps/Settings/
-git apply -v ../../../device/archos/persimmon/patches/packages_apps_Settings/0001-Patch-for-6735-mtk.patch
+git apply -v ../../../device/archos/persimmon/patches/packages_apps_Settings/0001-mtk6735.patch
 cd ../../..
 cd frameworks/opt/telephony
-git apply -v ../../../device/archos/persimmon/patches/framework_opt_telephony/0001-Patch-for-6735-mtk.patch
+git apply -v ../../../device/archos/persimmon/patches/framework_opt_telephony/0001-mtk6735.patch
 cd ../../..
 cd hardware/libhardware
 git apply -v ../../device/archos/persimmon/patches/hardware_libhardware/0001-Patch-for-6735-mtk.patch
