@@ -650,7 +650,7 @@ index 8183321..8fc3499 100644
 +    env->ReleaseBooleanArrayElements(almanacPresencesArray, almanac_presences, 0);
 +    env->ReleaseBooleanArrayElements(usedInFixArray, used_in_fix, 0);
 +    return (jint) num_svs;
-+
++}
 +
  static void android_location_GpsLocationProvider_agps_set_reference_location_cellid(JNIEnv* env,
          jobject obj, jint type, jint mcc, jint mnc, jint lac, jint cid)
