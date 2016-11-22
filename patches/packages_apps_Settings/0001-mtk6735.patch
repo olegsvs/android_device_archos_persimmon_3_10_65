@@ -57,7 +57,7 @@ index a09de53..7c6e9dd 100644
  
          showProgressDialog();
          mSwitch.setEnabled(false);
-+        setRadioStateForSpecificSIM(enable, mSir.getSubscriptionId());
++        setRadioStateForSpecificSIM(true, mSir.getSubscriptionId());
          if (mCurrentState) {
              SubscriptionManager.activateSubId(mSir.getSubscriptionId());
          } else {
