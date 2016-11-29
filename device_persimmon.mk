@@ -6,7 +6,7 @@ $(call inherit-product, device/common/gps/gps_us_supl.mk)
 # Off ninja
 USE_NINJA=false
 
-$(call inherit-product-if-exists, vendor/archos/persimmon-vendor.mk)
+$(call inherit-product-if-exists, vendor/archos/persimmon/persimmon-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/archos/persimmon/overlay
 
