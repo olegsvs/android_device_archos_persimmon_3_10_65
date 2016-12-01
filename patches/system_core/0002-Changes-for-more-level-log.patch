@@ -1,0 +1,50 @@
+From c756340839645eb8e13ed66a06ce7289b1532158 Mon Sep 17 00:00:00 2001
+From: olegsvs <oleg.texet@gmail.com>
+Date: Thu, 1 Dec 2016 19:27:20 +0000
+Subject: [PATCH 2/2] Changes for more level log
+
+Change-Id: I7b25a6a2fc2cc5982d3ce816f08e882d3fd6d610
+---
+ init/action.cpp  | 6 +++---
+ init/service.cpp | 2 +-
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/init/action.cpp b/init/action.cpp
+index 510ea89..8a14b44 100644
+--- a/init/action.cpp
++++ b/init/action.cpp
+@@ -118,15 +118,15 @@ void Action::ExecuteCommand(const Command& command) const {
+     Timer t;
+     int result = command.InvokeFunc();
+ 
+-    if (klog_get_level() >= KLOG_INFO_LEVEL) {
++//    if (klog_get_level() >= KLOG_INFO_LEVEL) {
+         std::string trigger_name = BuildTriggersString();
+         std::string cmd_str = command.BuildCommandString();
+         std::string source = command.BuildSourceString();
+ 
+-        INFO("Command '%s' action=%s%s returned %d took %.2fs\n",
++        ERROR("Command '%s' action=%s%s returned %d took %.2fs\n",
+              cmd_str.c_str(), trigger_name.c_str(), source.c_str(),
+              result, t.duration());
+-    }
++  //  }
+ }
+ 
+ bool Action::ParsePropertyTrigger(const std::string& trigger, std::string* err) {
+diff --git a/init/service.cpp b/init/service.cpp
+index 76e0bc8..68aac18 100644
+--- a/init/service.cpp
++++ b/init/service.cpp
+@@ -385,7 +385,7 @@ bool Service::Start() {
+         }
+     }
+ 
+-    NOTICE("Starting service '%s'...\n", name_.c_str());
++    ERROR("Starting service '%s'...\n", name_.c_str());
+ 
+     pid_t pid = fork();
+     if (pid == 0) {
+-- 
+1.9.1
+
