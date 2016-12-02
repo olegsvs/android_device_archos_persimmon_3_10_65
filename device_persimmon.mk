@@ -122,7 +122,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     prebuilts/ndk/current/sources/cxx-stl/stlport/libs/armeabi-v7a/libstlport_shared.so:system/lib/libstlport.so
 
-PRODUCT_EXTRA_RECOVERY_KEYS += device/archos/persimmon/archos
+#PRODUCT_EXTRA_RECOVERY_KEYS += device/archos/persimmon/archos
 
 #$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
