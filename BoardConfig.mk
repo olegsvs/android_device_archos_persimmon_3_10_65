@@ -58,7 +58,7 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 12831948800 # 0x2fcd80000
 BOARD_CACHEIMAGE_PARTITION_SIZE := 419439400 # 0x19000000
 #pagesize * 64
 BOARD_FLASH_BLOCK_SIZE := 131072
-BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x04000000 --tags_offset 0x0e000000 --board R14 
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x04000000 --tags_offset 0x0e000000 --board B3502_AC50CO_3M
 
 #in case we want to build kernel from source
 # uncomment the following lines
