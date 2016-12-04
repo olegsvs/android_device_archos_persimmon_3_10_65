@@ -9,7 +9,7 @@
 /dev/block/platform/mtk-msdc.0/11230000.MSDC0/by-name/protect1   /protect_f   ext4   noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc   wait,check,autoformat
 /dev/block/platform/mtk-msdc.0/11230000.MSDC0/by-name/protect2   /protect_s   ext4   noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc   wait,check,autoformat
 /dev/block/platform/mtk-msdc.0/11230000.MSDC0/by-name/nvdata     /nvdata      ext4   noatime,nosuid,nodev,noauto_da_alloc,discard               wait,check,autoformat
-
+/dev/block/platform/mtk-msdc.0/11230000.MSDC0/by-name/frp    /persistent     emmc  defaults                                                          defaults
 #please add cip or persist on project fstab
 #/dev/block/platform/mtk-msdc.0/by-name/persist    /persist     ext4   noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc   wait,check,autoformat
 
@@ -17,3 +17,4 @@
 #/devices/mtk-msdc.0/11230000.MSDC0      auto      vfat      defaults        voldmanaged=sdcard0:emmc@intsd,noemulatedsd,nonremovable
 /devices/mtk-msdc.0/11240000.MSDC1*     auto      auto      defaults        voldmanaged=sdcard1:auto,encryptable=userdata
 /devices/platform/mt_usb*               auto      vfat      defaults        voldmanaged=usb:auto
+
