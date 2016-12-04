@@ -1,4 +1,4 @@
-Device repository for Meizu M2 Mini (CyanogenMod)
+Device repository for Archos 50 Cobalt (CyanogenMod)
 ===========================
 
 Getting Started
@@ -25,7 +25,7 @@ Current state
 -------------
 
 - Cyanogen boots
-- Touch, screen, keyboard, central key are working
+- Touch, screen, keyboard working
 - Wifi is working
 - Audio is working
 - Telephony is working (see Known Issues)
@@ -36,16 +36,13 @@ Current state
 - GPS
 - Bluetooth (pairing only testes so far)
 - Sensors
-- Camera
 
 Known Issues
 -------------
 - Android Camera App is not stable (hangs) ex. with location enabled
-- Meizu Camera App is crasing when switching to front camera
+- Camera
 - Telephony crashes eventually on location request from camera. 
 - Hardware OMX codecs are not working
-
-All issues: https://github.com/divis1969/android_device_meizu_meilan2/issues
 
 Change log
 ----------
