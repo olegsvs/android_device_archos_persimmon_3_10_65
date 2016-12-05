@@ -1,6 +1,6 @@
 Device repository for Archos 50 Cobalt (CyanogenMod)
 ===========================
-
+For Stock 3.10.65 kernel
 Getting Started
 ---------------
 
