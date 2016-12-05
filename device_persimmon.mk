@@ -20,7 +20,7 @@ else
     LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
-TARGET_OTA_ASSERT_DEVICE := persimmon
+#TARGET_OTA_ASSERT_DEVICE := persimmon
 
 TARGET_PROVIDES_INIT_RC := true
 
@@ -76,6 +76,10 @@ PRODUCT_COPY_FILES += \
 #    libaudio-resampler \
 #    libtinycompress \
 #    libtinyxml
+
+# LiveDisplay
+PRODUCT_PACKAGES += \
+    libjni_livedisplay
 
 # RIL
 PRODUCT_PACKAGES += \
