@@ -96,6 +96,10 @@ PRODUCT_PACKAGES += archospshelper
 
 PRODUCT_PACKAGES += power.mt6735
 
+# Gello
+PRODUCT_PACKAGES += \
+    Gello
+
 # Wifi
 PRODUCT_PACKAGES += \
     libwpa_client \
