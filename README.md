@@ -20,7 +20,7 @@ Build the code:
     git clone https://github.com/olegsvs/android_device_archos_persimmon persimmon
     cd persimmon/patches
     source apply-pathes.sh
-    cd ../../../../vendor
+    cd vendor
     mkdir archos
     cd archos
     git clone https://github.com/olegsvs/android_vendor_archos_persimmon persimmon
