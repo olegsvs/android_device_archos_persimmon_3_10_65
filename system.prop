@@ -107,7 +107,7 @@ ro.audio.silent=0
 ro.zygote.preload.enable=0
 
 # temporary enables NAV bar (soft keys)
-qemu.hw.mainkeys=1
+qemu.hw.mainkeys=0
 
 ro.kernel.zio=38,108,105,16
 #ro.kernel.qemu=1
@@ -123,10 +123,10 @@ ro.sf.lcd_density=320
 ro.mtk_perf_simple_start_win=1
 ro.mtk_perf_response_time=1
 # add by liujianbo@wind-mobi.com 20150629 begin
-#persist.sys.timezone = Asia/Shanghai
+persist.sys.timezone = Europe/Moscow
 # add by liujianbo@wind-mobi.com 20150629 end
 
-persist.sys.isUsbOtgEnabled=true
+#persist.sys.isUsbOtgEnabled=true
 
 ro.mtk_perfservice_support=1
 

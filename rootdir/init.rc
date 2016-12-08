@@ -35,7 +35,7 @@ on early-init
 on init
     sysclktz 0
 
-    loglevel 3
+    loglevel 1
     #export LD_DEBUG 1
 
     # Mix device-specific information into the entropy pool
