@@ -19,7 +19,7 @@ Build the code:
     cd archos
     git clone https://github.com/olegsvs/android_device_archos_persimmon persimmon
     cd persimmon/patches
-    source apply-pathes.sh
+    . apply-patches.sh
     cd vendor
     mkdir archos
     cd archos
