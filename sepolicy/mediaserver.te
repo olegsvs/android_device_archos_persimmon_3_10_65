@@ -6,7 +6,8 @@ allow mediaserver ccci_device:chr_file rw_file_perms;
 # camera
 allow mediaserver sensorservice_service:service_manager find;
 allow mediaserver system_server:unix_stream_socket { read write };
-
+allow cameraserver mtk_smi_device:chr_file rw_file_perms;
+allow mediacodec mtk_smi_device:chr_file { ioctl read open };
 # video codec
 allow mediaserver Vcodec_device:chr_file rw_file_perms;
 

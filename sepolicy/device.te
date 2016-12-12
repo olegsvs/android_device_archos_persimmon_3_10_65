@@ -21,6 +21,7 @@ type accdet_device, dev_type;
 type devmap_device, dev_type;
 type fm_device, dev_type;
 type Vcodec_device, dev_type;
+type mtk_smi_device, dev_type;
 
 # Block devices
 type proinfo_device, dev_type;

@@ -10,6 +10,9 @@ FORCE_32_BIT = true
 
 TARGET_BOARD_PLATFORM := mt6735
 
+# Camera
+TARGET_HAS_LEGACY_CAMERA_HAL1 := true
+
 # Architecture
 ifeq ($(FORCE_32_BIT),true)
 TARGET_ARCH := arm
