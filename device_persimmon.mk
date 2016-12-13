@@ -22,14 +22,6 @@ endif
 
 #TARGET_OTA_ASSERT_DEVICE := persimmon
 
-# Camera
-PRODUCT_PROPERTY_OVERRIDES += \
-    media.stagefright.legacyencoder=true \
-    media.stagefright.less-secure=true
-
-PRODUCT_PACKAGES += \
-    fs_config_files
-
 TARGET_PROVIDES_INIT_RC := true
 
 PRODUCT_COPY_FILES += \
@@ -95,6 +87,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     Torch \
+    libxlog \
     libmtk_symbols \
     libperfservicenative \
     libcurl

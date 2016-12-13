@@ -167,7 +167,6 @@
     <string name="config_perf_profile_default_entry" translatable="false">1</string>
     -->
 
-    <!-- IpReachability monitor enable/Disable -->
-    <bool translatable="false" name="config_wifi_ipreachability_monitor">false</bool>
+    <bool name="config_supportDoubleTapWake">true</bool>
 
 </resources>
