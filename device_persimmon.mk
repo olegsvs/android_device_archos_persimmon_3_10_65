@@ -117,8 +117,8 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default
 
 # BT A2DP
-PRODUCT_COPY_FILES += \
-    vendor/archos/persimmon/proprietary/vendor/lib/hw/audio.a2dp.blueangel.so:system/vendor/lib/hw/audio.a2dp.mt6735.so
+#PRODUCT_COPY_FILES += \
+#    vendor/archos/persimmon/proprietary/vendor/lib/hw/audio.a2dp.blueangel.so:system/vendor/lib/hw/audio.a2dp.mt6735.so
 
 # Audio components from source
 PRODUCT_PACKAGES += \
