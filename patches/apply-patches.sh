@@ -8,7 +8,8 @@ git apply -v ../../device/archos/persimmon/patches/system_core/0001-remove-CAP_S
 #git apply -v ../../device/archos/persimmon/patches/system_core/0002-Changes-for-more-level-log.patch
 cd ../..
 cd system/netd
-git apply -v ../../device/archos/persimmon/patches/system_netd/0001-Enable-Tethering.patch
+git apply -v ../../device/archos/persimmon/patches/system_netd/0001-Revert-Don-t-start-tethering-if-IPv6-RPF-is-not-supp.patch
+git apply -v ../../device/archos/persimmon/patches/system_netd/0002-Enable-Tethering.patch
 cd ../..
 cd system/sepolicy
 git apply -v ../../device/archos/persimmon/patches/system_sepolicy/0001-Revert-back-to-version-29.patch

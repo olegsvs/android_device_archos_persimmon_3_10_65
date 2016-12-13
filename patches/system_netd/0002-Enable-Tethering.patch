@@ -1,12 +1,9 @@
-From fa9c62a09a025e620db540dff726b74b195586f6 Mon Sep 17 00:00:00 2001
-From: Dmitry Smirnov <divis1969@gmail.com>
-Date: Sat, 12 Mar 2016 19:42:46 +0300
-Subject: [PATCH] Enable Tethering
+From a5b0beeabc10bf74c30e36ed44d1078c1dc73820 Mon Sep 17 00:00:00 2001
+From: olegsvs <oleg.texet@gmail.com>
+Date: Tue, 13 Dec 2016 17:29:08 +0000
+Subject: [PATCH 2/2] Enable-Tethering
 
-Cherry-picked https://github.com/visi0nary/android_device_elephone_p8000/blob/cm-12.1/patches/system_netd/0001-hotpost-fix.patch
-
-Change-Id: I0fda94f5567a220db961526eb7c2ee96ce60d10c
-(cherry picked from commit 5cb001a0122ad5318da21dfcd3ab98624f90efb1)
+Change-Id: I40a101ae11d47dffed553e2be2f39a15d7b022bd
 ---
  server/SoftapController.cpp | 4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
