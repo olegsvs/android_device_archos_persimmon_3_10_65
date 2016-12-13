@@ -34,7 +34,7 @@ on init
     mkdir /mnt/cd-rom 0000 system system
 
 # Change ION driver permission
-    chmod 0644 /dev/ion
+    chmod 0777 /dev/ion
 
 # change lk_env permission
     chown root system /proc/lk_env

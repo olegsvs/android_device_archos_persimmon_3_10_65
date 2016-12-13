@@ -3,6 +3,9 @@ VENDOR_PATH := vendor/archos/persimmon
 
 USE_CAMERA_STUB := true
 
+# Include path
+TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
+
 FORCE_32_BIT = true
 
 # inherit from the proprietary version
