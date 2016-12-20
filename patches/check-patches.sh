@@ -1,32 +1,16 @@
 #!/bin/bash
 cd ../../../..
 cd frameworks/av
-git apply -v --check ../../device/archos/persimmon/patches/framework_av/0001-Patch-for-6735-mtk.patch
-git apply -v --check ../../device/archos/persimmon/patches/framework_av/0002-camera.patch
-git apply -v --check ../../device/archos/persimmon/patches/framework_av/frameworks_av_videorecording_fix.patch
 cd ../..
-cd frameworks/base
-git apply -v --check ../../device/archos/persimmon/patches/framework_base/0001-Patch-for-6735-mtk.patch
-cd ../..
-cd packages/apps/Settings/
-git apply -v --check ../../../device/archos/persimmon/patches/packages_apps_Settings/0001-Patch-for-6735-mtk.patch
-cd ../../..
-cd frameworks/opt/telephony
-git apply -v --check ../../../device/archos/persimmon/patches/framework_opt_telephony/0001-Patch-for-6735-mtk.patch
-cd ../../..
-cd hardware/libhardware
-git apply -v --check ../../device/archos/persimmon/patches/hardware_libhardware/0001-Patch-for-6735-mtk.patch
-cd ../..
-cd hardware/libhardware_legacy
-git apply -v --check ../../device/archos/persimmon/patches/hardware_libhardware_legacy/0001-Patch-for-6735-mtk.patch
-cd ../..
-cd packages/services/Telephony
-git apply -v --check ../../../device/archos/persimmon/patches/packages_services_telephony/0001-Patch-for-6735-mtk.patch
-cd ../../..
+git apply -v --check ../../device/archos/persimmon/patches/frameworks_av/0001-Disable-usage-of-get_capture_position.patch
 cd system/core
-git apply -v --check ../../device/archos/persimmon/patches/system_core/0001-mt6735.patch
+git apply -v --check ../../device/archos/persimmon/patches/system_core/0001-Remove-CAP_SYS_NICE-from-surfaceflinger.patch
+git apply -v --check ../../device/archos/persimmon/patches/system_core/0002-Changes-for-more-level-log.patch
 cd ../..
 cd system/netd
-git apply -v --check ../../device/archos/persimmon/patches/system_netd/0001-Patch-for-6735-mtk.patch
+git apply -v --check ../../device/archos/persimmon/patches/system_netd/0001-Enable-Tethering.patch
+cd ../..
+cd system/sepolicy
+git apply -v --check ../../device/archos/persimmon/patches/system_sepolicy/0001-Revert-back-to-version-29.patch
 cd ../..
 echo Patches Applied Successfully!
