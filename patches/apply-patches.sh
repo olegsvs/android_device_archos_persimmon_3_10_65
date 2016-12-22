@@ -12,7 +12,7 @@ git apply -v ../../device/archos/persimmon/patches/system_netd/0001-Revert-Don-t
 git apply -v ../../device/archos/persimmon/patches/system_netd/0002-Enable-Tethering.patch
 cd ../..
 cd packages/apps/Settings
-git apply -v ../../device/archos/persimmon/patches/packages_app_Settings/author.patch
+git apply -v ../../../device/archos/persimmon/patches/packages_app_Settings/author.patch
 cd ../../../
 cd system/sepolicy
 git apply -v ../../device/archos/persimmon/patches/system_sepolicy/0001-Revert-back-to-version-29.patch
