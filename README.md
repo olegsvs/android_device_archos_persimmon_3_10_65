@@ -50,7 +50,7 @@ Current state
 
 Known Issues
 -------------
-- Livedisplay
+- Livedisplay (lagging)
 - FMRadio
 - VoLTE
 - Gps without network connections?
