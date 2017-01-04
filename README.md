@@ -54,7 +54,6 @@ Known Issues
 - FMRadio
 - VoLTE
 - Gps without network connections?
-- Offline charging
 - Camera
 - Hardware OMX codecs are not working
 
