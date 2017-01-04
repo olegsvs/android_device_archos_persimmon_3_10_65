@@ -18,7 +18,7 @@ TARGET_SCREEN_WIDTH := 720
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := persimmon
-PRODUCT_NAME := cm_persimmon
+PRODUCT_NAME := lineage_persimmon
 PRODUCT_BRAND := Archos
 PRODUCT_MODEL := Archos 50 Cobalt
 PRODUCT_MANUFACTURER := Archos
