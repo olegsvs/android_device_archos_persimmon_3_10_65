@@ -20,13 +20,13 @@ Build the code:
     cd device
     mkdir archos
     cd archos
-    git clone https://github.com/olegsvs/android_device_archos_persimmon persimmon
+    git clone https://github.com/olegsvs/android_device_archos_persimmon_3_10_65 persimmon
     cd persimmon/patches
     . apply-patches.sh
     cd vendor
     mkdir archos
     cd archos
-    git clone https://github.com/olegsvs/android_vendor_archos_persimmon persimmon
+    git clone https://github.com/olegsvs/android_vendor_archos_persimmon_3_10_65 persimmon
     cd ../../
     source build/envsetup.sh
     breakfast persimmon
