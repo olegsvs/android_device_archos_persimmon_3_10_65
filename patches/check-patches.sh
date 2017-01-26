@@ -28,5 +28,5 @@ git apply -v --check ../../device/archos/persimmon/patches/system_core/0001-mt67
 cd ../..
 cd system/netd
 git apply -v --check ../../device/archos/persimmon/patches/system_netd/0001-Patch-for-6735-mtk.patch
-cd ../..
+cd ../../device/archos/persimmon/patches/
 echo Patches Applied Successfully!
