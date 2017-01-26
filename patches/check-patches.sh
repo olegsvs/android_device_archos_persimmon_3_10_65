@@ -12,5 +12,5 @@ git apply -v --check ../../device/archos/persimmon/patches/system_netd/0001-Enab
 cd ../..
 cd system/sepolicy
 git apply -v --check ../../device/archos/persimmon/patches/system_sepolicy/0001-Revert-back-to-version-29.patch
-cd ../..
+cd ../../device/archos/persimmon/patches/
 echo Patches Applied Successfully!
