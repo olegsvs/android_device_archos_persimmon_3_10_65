@@ -119,6 +119,9 @@ debug.hwui.render_dirty_regions=false
 
 ro.sf.lcd_density=320
 
+persist.af.audio_patch_fm=1
+fmradio.driver.enable=1
+
 # performance
 ro.mtk_perf_simple_start_win=1
 ro.mtk_perf_response_time=1
